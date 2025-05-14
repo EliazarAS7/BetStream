@@ -1,0 +1,11 @@
+<resources>
+    <string name="back_button">Botón de retroceso</string>
+    <string name="logo">Logo</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="dni">Dni:</string>
+    <string name="contrasena">Contraseña:</string>
+    <string name="dni_placeholder">PlaceHolder</string>
+    <string name="password_placeholder">PlaceHolder</string>
+    <string name="no_tiene_cuenta">¿No tiene cuenta?</string>
+    <string name="crear_una_aqui">Crea una aquí</string>
+</resources>

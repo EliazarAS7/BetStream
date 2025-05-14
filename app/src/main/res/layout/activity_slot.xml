@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SlotsActivity">
+
+    <!-- Fondo de la máquina tragamonedas -->
+    <ImageView
+        android:id="@+id/slotBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/slotbg" />
+
+    <!-- Contenedor principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_gravity="center_horizontal">
+
+        <!-- "Pantalla" de la máquina con los slots -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="3"
+            android:padding="8dp">
+
+
+            <!-- Primer slot -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/slot_hole_background">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/slot1"
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
+            </FrameLayout>
+
+            <!-- Segundo slot -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/slot_hole_background">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/slot2"
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
+            </FrameLayout>
+
+            <!-- Tercer slot -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/slot_hole_background">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/slot3"
+                    android:layout_width="match_parent"
+                    android:layout_height="154dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Botón para girar -->
+        <Button
+            android:id="@+id/spinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spin"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</FrameLayout>

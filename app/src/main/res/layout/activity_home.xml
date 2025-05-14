@@ -1,0 +1,176 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2D4AE"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <!-- Logo Superior -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"
+        tools:ignore="ContentDescription" />
+
+    <!-- Texto de Bienvenida -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Bienvenido"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <!-- Nombre del Usuario -->
+    <TextView
+        android:id="@+id/usernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="italic" />
+
+    <!-- Saldo del Usuario -->
+    <TextView
+        android:id="@+id/saldoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Saldo: "
+        android:textSize="20sp"
+        android:textColor="@color/green" />
+
+    <!-- Menú de Opciones -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:padding="16dp"
+        android:background="#E6E6E6"
+
+        >
+
+        <!-- Botón Ruleta -->
+        <LinearLayout
+            android:id="@+id/ruletaButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/card_background">
+
+
+            <ImageView
+
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/roulette"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ruleta"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Botón Blackjack -->
+        <LinearLayout
+            android:id="@+id/blackjackButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/card_background">
+
+            <ImageView
+
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/blackjack"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Blackjack"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Botón Slots -->
+        <LinearLayout
+            android:id="@+id/slotsButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/card_background">
+
+            <ImageView
+
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/slots"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Slots"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Botón Ajustes -->
+        <LinearLayout
+            android:id="@+id/settingsButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/card_background">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/settings"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ajustes"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+        </LinearLayout>
+    </GridLayout>
+
+</LinearLayout>

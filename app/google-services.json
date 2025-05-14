@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "10418367744",
+    "project_id": "betstream-ec69a",
+    "storage_bucket": "betstream-ec69a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10418367744:android:09cb4ed3324a2b798997e5",
+        "android_client_info": {
+          "package_name": "com.company.betstream"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlhjtJ_oSSdETxWhfHWrDNwf0d1iDSqTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10418367744:android:6a459baeb63bd75a8997e5",
+        "android_client_info": {
+          "package_name": "com.example.betstream"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlhjtJ_oSSdETxWhfHWrDNwf0d1iDSqTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

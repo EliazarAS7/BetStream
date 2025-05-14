@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5D6A5"
+    android:padding="16dp">
+
+    <!-- Botón de retroceso -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:src="@drawable/back_arrow" />
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription=""
+        android:src="@drawable/logo" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Crear Cuenta"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Campo de Nombre -->
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="40dp"
+        android:hint="Nombre:"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#999999" />
+
+    <!-- Campo de Apellidos -->
+    <EditText
+        android:id="@+id/etApellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNombre"
+        android:layout_marginTop="16dp"
+        android:hint="Apellidos:"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#999999" />
+
+    <!-- Campo de DNI -->
+    <EditText
+        android:id="@+id/etDni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etApellidos"
+        android:layout_marginTop="16dp"
+        android:hint="Dni:"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#999999" />
+
+    <!-- Campo de Contraseña -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etDni"
+        android:layout_marginTop="16dp"
+        android:hint="Contraseña:"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#999999" />
+
+    <!-- Campo de Fecha de Nacimiento -->
+
+
+    <!-- Botón Crear Cuenta -->
+    <LinearLayout
+        android:id="@+id/LinearButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        >
+        <Button
+            android:id="@+id/etFechaNacimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:inputType="date"
+            android:text="Fecha de Nacimiento"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LinearButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Crear Cuenta"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+</RelativeLayout>
