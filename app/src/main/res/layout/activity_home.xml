@@ -1,3 +1,5 @@
+
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +10,21 @@
     android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_gravity="start"
+        android:background="@null"
+        android:src="@drawable/back_arrow" />
+
+
     <!-- Logo Superior -->
+
+
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="100dp"

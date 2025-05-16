@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".SlotsActivity">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_gravity="start"
+        android:background="@null"
+        android:src="@drawable/back_arrow" />
+
     <!-- Fondo de la máquina tragamonedas -->
     <ImageView
         android:id="@+id/slotBackground"
