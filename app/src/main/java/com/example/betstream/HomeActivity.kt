@@ -5,6 +5,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.widget.LinearLayout
+import android.widget.ImageButton
+
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,12 @@ class HomeActivity : AppCompatActivity() {
         slotsButton.setOnClickListener {
             val intent = Intent(this, SlotsActivity::class.java)
             startActivity(intent)
+        }
+
+        // Botón de Volver (Back)
+        val backButton = findViewById<ImageButton>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish() // Esto cierra la actividad y regresa a la anterior
         }
     }
 }

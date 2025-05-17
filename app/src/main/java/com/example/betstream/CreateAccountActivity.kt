@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -30,6 +31,12 @@ class CreateAccountActivity : AppCompatActivity() {
 
         setUpRegisterButton()
         setupFechaNacimientoPicker()
+
+        // ————— Aquí inicializamos el botón de retroceso —————
+        val backButton = findViewById<ImageButton>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish() // Cierra esta actividad y vuelve a la anterior :contentReference[oaicite:0]{index=0}
+        }
     }
 
     private fun setupFechaNacimientoPicker() {

@@ -9,13 +9,22 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
+import android.widget.ImageButton
 
 class IniciarSesionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        setUpbuttoncrearcuenta()
-        login()
+
+        // ————— Aquí inicializamos el botón de retroceso —————
+        val backButton = findViewById<ImageButton>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish() // Cierra esta actividad y vuelve a la anterior :contentReference[oaicite:0]{index=0}
+        }
+        // ————————————————————————————————————————————————
+
+        setUpbuttoncrearcuenta()  // Configura enlace a crear cuenta
+        login()                   // Configura lógica de login
     }
 
     private fun setUpbuttoncrearcuenta() {
@@ -90,5 +99,6 @@ class IniciarSesionActivity : AppCompatActivity() {
                 Log.e("LoginError", "Error on login: $exception")
             }
     }
+
 
 }
