@@ -8,4 +8,7 @@
     <string name="password_placeholder">PlaceHolder</string>
     <string name="no_tiene_cuenta">¿No tiene cuenta?</string>
     <string name="crear_una_aqui">Crea una aquí</string>
+    <string name="depositar">Depositar saldo</string>
+    <string name="retirar">Retirar saldo</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>
