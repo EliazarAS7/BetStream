@@ -35,9 +35,9 @@ class HomeActivity : AppCompatActivity() {
         }*/
 
         // 4) Botón “Blackjack”
-        /*findViewById<LinearLayout>(R.id.blackjackButton).setOnClickListener {
+        findViewById<LinearLayout>(R.id.blackjackButton).setOnClickListener {
             startActivity(Intent(this, BlackjackActivity::class.java))
-        }*/
+        }
 
         // 5) Botón “Slots”
         findViewById<LinearLayout>(R.id.slotsButton).setOnClickListener {
