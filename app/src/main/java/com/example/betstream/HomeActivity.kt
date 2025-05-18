@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         // 2) Muestra nombre y saldo inicial
         findViewById<TextView>(R.id.usernameText).text = nombre ?: "Usuario"
         saldoTextView = findViewById(R.id.saldoText)
-        saldoTextView.text = "Saldo: $saldoInit"
+        saldoTextView.text = "Saldo: $saldoInit €"
 
         // 3) Botón “Ruleta”
         /*findViewById<LinearLayout>(R.id.ruletaButton).setOnClickListener {

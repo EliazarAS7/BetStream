@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SlotsActivity">
+    tools:context=".SlotsActivity"
+    android:background="#F2D4AE">
+
 
     <ImageButton
         android:id="@+id/backButton"
@@ -16,13 +18,6 @@
         android:background="@null"
         android:src="@drawable/back_arrow" />
 
-    <!-- Fondo de la máquina tragamonedas -->
-    <ImageView
-        android:id="@+id/slotBackground"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/slotbg" />
 
     <!-- Contenedor principal -->
     <LinearLayout

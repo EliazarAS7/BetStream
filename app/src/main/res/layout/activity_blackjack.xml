@@ -27,6 +27,17 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/tvSaldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo: 0"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"/>
+
     </LinearLayout>
 
     <!-- Parte central: scrollable con la UI de Blackjack -->
