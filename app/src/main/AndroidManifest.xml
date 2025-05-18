@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -13,7 +12,7 @@
         android:theme="@style/Theme.BetStream"
         tools:targetApi="35">
 
-        <!-- Actividad principal que lanza la app (MAIN/LAUNCHER) -->
+        <!-- Main / Launcher -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -24,34 +23,47 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad de inicio de sesión -->
+        <!-- Login -->
         <activity
             android:name=".IniciarSesionActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
-        </activity>
+            android:theme="@style/Theme.AppCompat" />
 
-        <!-- Actividad para crear cuenta -->
+        <!-- Crear Cuenta -->
         <activity
             android:name=".CreateAccountActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
-        </activity>
+            android:theme="@style/Theme.AppCompat" />
 
-        <!-- Actividad de slots (sin intent-filter) -->
-        <activity
-            android:name=".SlotsActivity"
-            android:exported="true"
-            android:label="BetStream"
-            android:theme="@style/Theme.AppCompat">
-        </activity>
-
-        <!-- Actividad para la página principal (Home) -->
+        <!-- Home -->
         <activity
             android:name=".HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
-        </activity>
+            android:theme="@style/Theme.AppCompat" />
+
+        <!-- Slots -->
+        <activity
+            android:name=".SlotsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
+
+        <!-- Ajustes -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
+
+        <!-- Depósito -->
+        <activity
+            android:name=".DepositarActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
+
+        <!-- Retirada -->
+        <activity
+            android:name=".RetirarActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
 
         <!-- BlackjackActivity, sin intent-filter -->
         <activity
@@ -62,5 +74,4 @@
         </activity>
 
     </application>
-
 </manifest>
