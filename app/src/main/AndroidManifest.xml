@@ -53,6 +53,14 @@
             android:theme="@style/Theme.AppCompat">
         </activity>
 
+        <!-- BlackjackActivity, sin intent-filter -->
+        <activity
+            android:name=".BlackjackActivity"
+            android:label="blackjack"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
