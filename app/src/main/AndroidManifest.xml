@@ -69,9 +69,9 @@
         <activity
             android:name=".BlackjackActivity"
             android:label="blackjack"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat" />
 
-        </activity>
 
     </application>
 </manifest>
