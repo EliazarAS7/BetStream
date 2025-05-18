@@ -30,19 +30,28 @@ class HomeActivity : AppCompatActivity() {
         saldoTextView.text = "Saldo: $saldoInit €"
 
         // 3) Botón “Ruleta”
-        /*findViewById<LinearLayout>(R.id.ruletaButton).setOnClickListener {
-            startActivity(Intent(this, RuletaActivity::class.java))
-        }*/
+        findViewById<LinearLayout>(R.id.ruletaButton).setOnClickListener {
+            val intent = Intent(this, RuletaActivity::class.java)
+            intent.putExtra("userDocId", userDocId) // <- Esto es lo que faltaba
+            startActivity(intent)
+        }
+
 
         // 4) Botón “Blackjack”
         findViewById<LinearLayout>(R.id.blackjackButton).setOnClickListener {
-            startActivity(Intent(this, BlackjackActivity::class.java))
+            val intent = Intent(this, BlackjackActivity::class.java)
+            intent.putExtra("userDocId", userDocId) // ← ESTO ES CLAVE
+            startActivity(intent)
         }
+
 
         // 5) Botón “Slots”
         findViewById<LinearLayout>(R.id.slotsButton).setOnClickListener {
-            startActivity(Intent(this, SlotsActivity::class.java))
+            val intent = Intent(this, SlotsActivity::class.java)
+            intent.putExtra("userDocId", userDocId)  // Asegura que se pase correctamente
+            startActivity(intent)
         }
+
 
         // 6) Botón “Ajustes”
         findViewById<LinearLayout>(R.id.settingsButton).setOnClickListener {

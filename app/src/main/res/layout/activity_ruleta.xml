@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F2D4AE">
+
+    <!-- Parte superior: botón atrás, logo y saldo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:background="@null"
+            android:src="@drawable/back_arrow" />
+
+        <ImageView
+            android:id="@+id/logoView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/tvSaldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo: €0.00"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Selección de apuesta -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona tu apuesta:"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Apuesta tipo -->
+    <Spinner
+        android:id="@+id/spinnerTipoApuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+    <!-- Apuesta cantidad -->
+    <EditText
+        android:id="@+id/etCantidadApuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Cantidad (€)"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/etNumeroEspecifico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número específico (0-36)"
+        android:inputType="number"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"/>
+
+
+    <!-- Botón apostar -->
+    <Button
+        android:id="@+id/btnApostar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apostar"
+        android:layout_marginTop="12dp" />
+
+    <!-- Resultado de la ruleta -->
+    <TextView
+        android:id="@+id/tvResultadoRuleta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado: -"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="24dp" />
+
+    <!-- Botón girar ruleta -->
+    <Button
+        android:id="@+id/btnGirar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Girar Ruleta"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

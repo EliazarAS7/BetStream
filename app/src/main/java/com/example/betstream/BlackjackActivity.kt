@@ -1,11 +1,9 @@
 package com.example.betstream
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 
 class BlackjackActivity : AppCompatActivity() {
 
@@ -21,10 +19,18 @@ class BlackjackActivity : AppCompatActivity() {
     private lateinit var btnHit: Button
     private lateinit var btnStand: Button
     private lateinit var btnRestart: Button
+    private lateinit var tvSaldo: TextView
+
+    private lateinit var userDocId: String
+    private var saldoActual: Double = 0.0
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blackjack)
+
+        // Recoger userDocId
+        userDocId = intent.getStringExtra("userDocId") ?: ""
 
         // Referencias a vistas
         backButton    = findViewById(R.id.backButton)
@@ -35,6 +41,7 @@ class BlackjackActivity : AppCompatActivity() {
         btnHit        = findViewById(R.id.btnHit)
         btnStand      = findViewById(R.id.btnStand)
         btnRestart    = findViewById(R.id.btnRestart)
+        tvSaldo       = findViewById(R.id.tvSaldo)
 
         // Listeners
         backButton.setOnClickListener { finish() }
@@ -42,10 +49,48 @@ class BlackjackActivity : AppCompatActivity() {
         btnStand.setOnClickListener { playerStand() }
         btnRestart.setOnClickListener { startGame() }
 
+        obtenerSaldoDesdeFirestore()
         startGame()
     }
 
+    private fun obtenerSaldoDesdeFirestore() {
+        db.collection("Usuarios").document(userDocId)
+            .get()
+            .addOnSuccessListener { doc ->
+                if (doc != null && doc.exists()) {
+                    saldoActual = doc.getDouble("Saldo") ?: 0.0
+                    actualizarTextoSaldo()
+
+                    // Solo empieza el juego si tiene saldo suficiente
+                    if (saldoActual >= 10.0) {
+                        startGame()
+                    } else {
+                        Toast.makeText(this, "Saldo insuficiente para jugar", Toast.LENGTH_LONG).show()
+                        btnHit.isEnabled = false
+                        btnStand.isEnabled = false
+                    }
+                } else {
+                    tvSaldo.text = "Saldo no encontrado"
+                }
+            }
+            .addOnFailureListener {
+                tvSaldo.text = "Error al cargar saldo"
+            }
+    }
+
+
+    private fun actualizarTextoSaldo() {
+        tvSaldo.text = "Saldo: €%.2f".format(saldoActual)
+    }
+
     private fun startGame() {
+        if (saldoActual < 10.0) {
+            Toast.makeText(this, "Saldo insuficiente para jugar (mínimo €10)", Toast.LENGTH_LONG).show()
+            btnHit.isEnabled = false
+            btnStand.isEnabled = false
+            return
+        }
+
         deck = Deck().apply { shuffle() }
         playerHand.clear()
         dealerHand.clear()
@@ -60,6 +105,7 @@ class BlackjackActivity : AppCompatActivity() {
         btnStand.isEnabled = true
         updateUI(showDealerAll = false)
     }
+
 
     private fun updateUI(showDealerAll: Boolean) {
         val dealerText = dealerHand.mapIndexed { i, card ->
@@ -91,7 +137,7 @@ class BlackjackActivity : AppCompatActivity() {
         playerHand.add(deck.draw())
         updateUI(showDealerAll = false)
         if (getHandValue(playerHand) > 21) {
-            endGame("¡Te has pasado! Has perdido.")
+            endGame("¡Te has pasado! Has perdido.", saldoCambio = -10.0)
         }
     }
 
@@ -107,19 +153,46 @@ class BlackjackActivity : AppCompatActivity() {
         val playerTotal = getHandValue(playerHand)
         val dealerTotal = getHandValue(dealerHand)
 
-        val result = when {
-            dealerTotal > 21           -> "¡El dealer se pasa! ¡Ganaste!"
-            dealerTotal == playerTotal -> "Empate."
-            playerTotal > dealerTotal  -> "¡Ganaste!"
-            else                       -> "Has perdido."
+        val result: String
+        val saldoCambio: Double
+
+        when {
+            dealerTotal > 21 -> {
+                result = "¡El dealer se pasa! ¡Ganaste!"
+                saldoCambio = 10.0
+            }
+            dealerTotal == playerTotal -> {
+                result = "Empate."
+                saldoCambio = 0.0
+            }
+            playerTotal > dealerTotal -> {
+                result = "¡Ganaste!"
+                saldoCambio = 10.0
+            }
+            else -> {
+                result = "Has perdido."
+                saldoCambio = -10.0
+            }
         }
-        endGame(result)
+
+        endGame(result, saldoCambio)
     }
 
-    private fun endGame(message: String) {
+    private fun endGame(message: String, saldoCambio: Double) {
         updateUI(showDealerAll = true)
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
         btnHit.isEnabled = false
         btnStand.isEnabled = false
+
+        // Actualiza el saldo si hubo cambios
+        if (saldoCambio != 0.0) {
+            val nuevoSaldo = saldoActual + saldoCambio
+            db.collection("Usuarios").document(userDocId)
+                .update("Saldo", nuevoSaldo)
+                .addOnSuccessListener {
+                    saldoActual = nuevoSaldo
+                    actualizarTextoSaldo()
+                }
+        }
     }
 }

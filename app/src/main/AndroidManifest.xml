@@ -68,10 +68,14 @@
         <!-- BlackjackActivity, sin intent-filter -->
         <activity
             android:name=".BlackjackActivity"
-            android:label="blackjack"
-            android:parentActivityName=".MainActivity"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat" />
 
+        <!-- Ruleta -->
+        <activity
+            android:name=".RuletaActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat" />
 
     </application>
 </manifest>
