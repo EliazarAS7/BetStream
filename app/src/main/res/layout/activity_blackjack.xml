@@ -58,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:text="Mano del Dealer:"
                 android:textSize="18sp"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/tvDealerCards"
@@ -66,7 +67,8 @@
                 android:layout_height="wrap_content"
                 android:text="–"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/tvDealerSum"
@@ -74,7 +76,8 @@
                 android:layout_height="wrap_content"
                 android:text="Suma: 0"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"/>
 
             <View
                 android:layout_width="match_parent"
@@ -88,7 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tu Mano:"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/tvPlayerCards"
@@ -96,7 +100,8 @@
                 android:layout_height="wrap_content"
                 android:text="–"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/tvPlayerSum"
@@ -104,7 +109,8 @@
                 android:layout_height="wrap_content"
                 android:text="Suma: 0"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"/>
 
             <!-- Botones Hit / Stand -->
             <LinearLayout
@@ -115,18 +121,22 @@
 
                 <Button
                     android:id="@+id/btnHit"
-                    android:layout_width="0dp"
+                    android:layout_width="158dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Pedir Carta"/>
+                    android:background="@drawable/button_background"
+                    android:text="Pedir Carta"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/btnStand"
-                    android:layout_width="0dp"
+                    android:layout_width="158dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginStart="8dp"
-                    android:text="Plantarse"/>
+                    android:background="@drawable/button_background"
+                    android:text="Plantarse"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -135,8 +145,11 @@
                 android:id="@+id/btnRestart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background"
                 android:text="Reiniciar Juego"
-                android:layout_marginTop="12dp"/>
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
 
         </LinearLayout>
     </ScrollView>
