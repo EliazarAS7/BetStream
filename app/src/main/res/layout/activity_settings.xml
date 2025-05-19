@@ -39,7 +39,7 @@
         android:id="@+id/retirar"
         android:layout_width="158dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/button_background"
         android:text="@string/retirar"
         android:textColor="@color/black"
@@ -54,9 +54,6 @@
         android:text="@string/logout"
         android:textColor="@color/black"
         android:textSize="16sp" />
-
-
-
 
 
 </LinearLayout>
